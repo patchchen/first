@@ -1,0 +1,6 @@
+Git commands used to upload to GitHub
+
+1. Remove-Item .git/index.lock -Force
+2. git add initial.py main.py read_write.py release.py
+3. git commit -m "Add serial communication UI and helper modules"
+4. git push origin main
