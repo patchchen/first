@@ -1,6 +1,6 @@
 import tkinter as tk
 from initial import init_serial
-from read_write import read_data, write_data
+from read_write import read_serial , write_serial
 from release import release_serial
 
 class SerialApp:
@@ -54,7 +54,7 @@ class SerialApp:
             print("Failed to connect.")
 
     def read(self):
-        data = read_data(self.ser)
+        data = read_serial(self.ser)
         if data:
             print(f"Read: {data}")
         else:
@@ -63,7 +63,7 @@ class SerialApp:
     def write(self):
         command = self.write_entry.get()
         if command:
-            write_data(self.ser, command)
+            write_serial(self.ser, command)
             print(f"Written: {command}")
         else:
             print("No command to write.")
