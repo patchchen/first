@@ -12,9 +12,12 @@ def init_serial(port, baudrate=9600, timeout=1): # init_serial function to initi
     Returns:
         serial.Serial or None: Serial object if successful, None otherwise
     """
-    try:
+    try: # Try to create a serial connection
         ser = serial.Serial(port, baudrate, timeout=timeout)
         return ser
     except Exception as e:
         print(f"Error initializing serial: {e}")
         return None
+    
+
+    
