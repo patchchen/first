@@ -1,4 +1,4 @@
-def release_serial(ser):
+def serial_release(ser):
     """
     Release serial connection.
     

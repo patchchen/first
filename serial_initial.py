@@ -1,6 +1,6 @@
 import serial
 
-def init_serial(port, baudrate=9600, timeout=1): # init_serial function to initialize the serial connection
+def serial_init(port, baudrate=9600, timeout=1): # init_serial function to initialize the serial connection
     """
     Initialize serial connection.
     

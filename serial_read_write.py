@@ -1,4 +1,4 @@
-def read_serial(ser):
+def serial_read(ser):
     """
     Read data from serial port.
     
@@ -17,7 +17,7 @@ def read_serial(ser):
             return None
     return None
 
-def write_serial(ser, command):
+def serial_write(ser, command):
     """
     Write command to serial port.
     

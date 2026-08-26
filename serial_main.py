@@ -1,7 +1,7 @@
 import tkinter as tk
-from initial import init_serial
-from read_write import read_serial , write_serial
-from release import release_serial
+from first.serial_initial import serial_init
+from first.serial_read_write import serial_read , serial_write
+from first.serial_release import serial_release
 
 class SerialApp:
     def __init__(self, root):
@@ -45,7 +45,7 @@ class SerialApp:
             print("Already connected.")
             return
         port = self.port_entry.get()
-        self.ser = init_serial(port)
+        self.ser = serial_init(port)
         if self.ser:
             self.status_label.config(text="Connected")
             print("Connected to serial port.")
@@ -54,7 +54,7 @@ class SerialApp:
             print("Failed to connect.")
 
     def read(self):
-        data = read_serial(self.ser)
+        data = serial_read(self.ser)
         if data:
             print(f"Read: {data}")
         else:
@@ -63,13 +63,13 @@ class SerialApp:
     def write(self):
         command = self.write_entry.get()
         if command:
-            write_serial(self.ser, command)
+            serial_write(self.ser, command)
             print(f"Written: {command}")
         else:
             print("No command to write.")
 
     def release(self):
-        release_serial(self.ser)
+        serial_release(self.ser)
         self.ser = None
         self.status_label.config(text="Not Connected")
 
