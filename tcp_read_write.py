@@ -1,16 +1,21 @@
-def tcp_read(tcp_socket, buffer_size=4096):
+import time
+
+
+def tcp_read(tcp_socket, buffer_size=4096, delay_time=0):
     """
     Read data from a TCP connection.
 
     Args:
         tcp_socket (socket.socket): Connected TCP socket.
         buffer_size (int): Maximum number of bytes to receive.
+        delay_time (float): Delay in milliseconds before reading data.
 
     Returns:
         str or None: Read data as a string, or None if no data or an error occurs.
     """
     if tcp_socket:
         try:
+            time.sleep(delay_time / 1000.0)
             data = tcp_socket.recv(buffer_size)
             if not data:
                 return None
